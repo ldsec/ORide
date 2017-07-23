@@ -144,6 +144,7 @@ public:
   /* misc
    */
   pointer_type data() { return _data; }
+  const_pointer_type cdata() const { return _data; }
   static constexpr value_type get_modulus(size_t n) { return params<T>::P[n]; }
 
   /* ntt stuff - public API

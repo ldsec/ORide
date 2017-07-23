@@ -133,7 +133,7 @@ struct funct
 	double k;
 };
 
-double newton_raphson(double k, double max_guess, int digits)
+inline double newton_raphson(double k, double max_guess, int digits)
 {
   unsigned max_counter = 1U<<15;
   std::tuple<double, double> values;
