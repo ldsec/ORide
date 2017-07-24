@@ -59,7 +59,8 @@ public:
     inline const mpz_t& bigmodDivBy2() {generate(); return _bigmodDivBy2;}
 
     static constexpr size_t bytesPublicKey = 2*Nbytes;
-    static constexpr size_t bytesCiphertext = 2*Nbytes;
+    static constexpr size_t bytesCiphertext2 = 2*Nbytes;
+    static constexpr size_t bytesCiphertext3 = 3*Nbytes;
 
 private:
     ParamsCT();

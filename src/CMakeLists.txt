@@ -57,3 +57,12 @@ ADD_EXECUTABLE(
 
 TARGET_LINK_LIBRARIES(test_simple nfllib_static mpfr gmpxx gmp)
 
+ADD_EXECUTABLE(
+    test_honest
+    stats.cpp
+    util.cpp
+    test_honest.cpp
+)
+
+TARGET_LINK_LIBRARIES(test_honest nfllib_static mpfr gmpxx gmp)
+

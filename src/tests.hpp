@@ -38,7 +38,8 @@ void print_params()
 
     std::cerr << "Sizes of messages:" << std::endl;
     std::cerr << "- public key = " << PrmsCT::bytesPublicKey << " bytes" << std::endl;
-    std::cerr << "- ciphertext = " << PrmsCT::bytesCiphertext << " bytes" << std::endl;
+    std::cerr << "- ciphertext2 = " << PrmsCT::bytesCiphertext2 << " bytes" << std::endl;
+    std::cerr << "- ciphertext3 = " << PrmsCT::bytesCiphertext3 << " bytes" << std::endl;
 }
 
 }
