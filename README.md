@@ -9,12 +9,14 @@ We propose ORide (Oblivious Ride), a privacy-friendly RHS designed to support al
 This project is organized as follows.
 
 - `NFLlib/`: ORide uses [NFLlib](https://github.com/quarkslab/NFLlib) for cryptographic operations on lattices (GPLv3 license). We include it with minor fixes in this folder.
+In particular, we use 20-bit plaintexts for `uint32_t`, to obtain correct results given the amount of homomorphic computation.
 - `src/`: Source code for our ride matching proof-of-concept, with benchmarks and examples.
 - `src/test_simple.cpp`: A simple version of the protocol with only one rider and one driver, to get familiar with the cryptographic operations.
 - `src/fv.hpp`: Implementation of the FV homomorphic encryption scheme, inspired from [FV-NFLlib](https://github.com/CryptoExperts/FV-NFLlib) (licensed under GPLv3).
 - `src/util.hpp`: Misc operations on lattices for FV.
 - `src/serialize.hpp`: Serialize cryptographic keys and ciphertexts to/from byte sequences.
 - `src/stats.hpp`: Class to gather benchmark statistics (mean, variance, median).
+- `scripts/ntt-params.sage`: [Sage](http://www.sagemath.org/) script to generate NTT parameters for various plaintext sizes.
 
 ## Running the benchmarks
 
