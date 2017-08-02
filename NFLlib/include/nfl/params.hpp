@@ -49,6 +49,17 @@ struct params<uint32_t> {
 
   typedef value_type* poly_t;
 
+#ifndef MODULUS_30_BITS
+  // Generated with Sage
+  static constexpr unsigned int kMaxNbModuli = 18;
+  static constexpr value_type P[kMaxNbModuli] = {1032193UL, 974849UL, 925697UL, 786433UL, 778241UL, 737281UL, 638977UL, 557057UL, 417793UL, 319489UL, 286721UL, 270337UL, 188417UL, 163841UL, 147457UL, 114689UL, 65537UL, 40961UL};
+  static constexpr value_type Pn[kMaxNbModuli] = {50860047UL, 3337160189UL, 3057166422UL, 1401829641UL, 3495936854UL, 1779495138UL, 2708003776UL, 445844462UL, 568038987UL, 1030679765UL, 2598017734UL, 1960146706UL, 40597911UL, 1030796345UL, 3923803036UL, 3506107980UL, 65535UL, 172067120UL};
+  static constexpr unsigned int kModulusBitsize = 20;
+  static constexpr unsigned int kModulusRepresentationBitsize = 32;
+  static constexpr value_type primitive_roots[kMaxNbModuli] = {97058UL, 914372UL, 58914UL, 406601UL, 173742UL, 388433UL, 217165UL, 160144UL, 153728UL, 80551UL, 173352UL, 86290UL, 59526UL, 84080UL, 62093UL, 80720UL, 6561UL, 243UL};
+  static constexpr value_type invkMaxPolyDegree[kMaxNbModuli] = {1031941UL, 974611UL, 925471UL, 786241UL, 778051UL, 737101UL, 638821UL, 556921UL, 417691UL, 319411UL, 286651UL, 270271UL, 188371UL, 163801UL, 147421UL, 114661UL, 65521UL, 40951UL};
+  static constexpr unsigned int kMaxPolyDegree = 4096;
+#else
   // The moduli used in each 32 bit block (30 bits long each)
   // They are of the form p = 2**31 - i*2**14 + 1 for increasing i
   static constexpr unsigned int kMaxNbModuli = 291;
@@ -76,6 +87,7 @@ struct params<uint32_t> {
 
   // Polynomial related data
   static constexpr unsigned int kMaxPolyDegree = 32768;
+#endif
 };
 
 // Specialization for 64 bits
